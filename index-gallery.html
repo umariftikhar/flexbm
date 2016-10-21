@@ -49,7 +49,7 @@
 							<a href="index-image.html">Image Header</a>
 						</li>
 						<li>
-							<a href="index-gallery.html">Gallery Header</a>
+							<a href="index.html">Video Header</a>
 						</li>
 					</ul>
 				</nav>
@@ -57,11 +57,22 @@
 		</div><!--/wrapper-->
 	</header><!--/header-->
 	
-	<section class="full video" id="home">
+	<section class="gallery" id="home">
 	
-		<h1 class="mega">Welcome Traveller.<br />We are Tides.</h1>
-		<a class="button white light scroller" href="#portfolio">View More</a>
-		<a class="mute muted" href="#"><i class="fa fa-volume-up"></i></a>
+		<ul class="rslides">
+		  <li>
+		  	<img src="img/1.jpg" alt="image">
+		  	<h1 class="mega">Welcome Traveller.<br />We are Tides.</h1>
+		  </li>
+		  <li>
+		  	<img src="img/2.jpg" alt="image">
+		  	<h1 class="mega">Awesome Design.<br />Clean Code.</h1>
+		  </li>
+		  <li>
+		  	<img src="img/3.jpg" alt="image">
+		  	<h1 class="mega">Video, Image<br />& Gallery Headers.</h1>
+		  </li>
+		</ul>
 	
 	</section>
 	
@@ -87,7 +98,7 @@
 	
 		<div class="wrapper overflow-hidden">
 		
-		<div id="loader"></div>
+			<div id="loader"></div>
 			
 			<ul class="clearfix portfolio-isotope portfolio scroll-animate bottom">
 							
@@ -186,7 +197,7 @@
 	</section>
 	
 	<section class="small-padding" id="services">
-		
+			
 		<div class="wrapper">
 			<h3 class="floatleft">Our Services <small>Prepare for Awesome.</small></h3>
 			<div class="clear"></div><!--CLEAR FLOATS-->
@@ -363,34 +374,7 @@
 <!--LOAD SCRIPTS-->
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
-<script type="text/javascript" src="js/video.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
-<script>
-    $(function() {
-        var BV = new $.BigVideo({useFlashForFirefox:false});
-		BV.init();
-		if ((/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent)) {
-		    BV.show('img/cover.png');
-		} else {
-		    BV.show('http://video-js.zencoder.com/oceans-clip.mp4',{
-		    	altSource:'http://video-js.zencoder.com/oceans-clip.ogv'
-		    });
-		}
-		BV.getPlayer().volume(0);
-		
-		$('body').on('click', '.mute.muted', function(){
-			BV.getPlayer().volume(0.8);
-			$(this).removeClass('muted').addClass('unmuted');
-			return false;
-		});
-		
-		$('body').on('click', '.mute.unmuted', function(){
-			BV.getPlayer().volume(0);
-			$(this).removeClass('unmuted').addClass('muted');
-			return false;
-		});
-    });
-</script>
 
 </body>
 </html>
