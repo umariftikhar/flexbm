@@ -99,6 +99,8 @@ img {
 .box-40 {
 	width: 40%;
 	float: left;
+	position:relative;
+	overflow:hidden;
 }
 .box-60 {
 	width: 60%;
@@ -131,6 +133,7 @@ blockquote small {
 .header {
 	width: 100%;
 	z-index: 999;
+	-webkit-backface-visibility: hidden;
 	transition: ease .3s;
 	-webkit-transition: ease .3s;
 	-moz-transition: ease .3s;
@@ -182,7 +185,16 @@ blockquote small {
 	padding: 20px 0;
 	display: block;
 }
-/*----------------------------SLIDER SETTING-----------------------------------*/
+/*----------------------------VIDEO SETTING-----------------------------------*/
+#big-video-wrap {
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -999;
+}
 .box-caption {
 	width: 100%;
 	z-index: -1;
@@ -446,17 +458,14 @@ blockquote small {
 .bg1 {
 	background: url(../images/bg.jpg) center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
 }
 .bg2 {
 	background: url(../images/bg2.jpg) no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
 }
 .twitter-feed {
 	background: url(../images/bg3.jpg) center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
 }
 .dark-mask {
 	background: url("../images/overlays/02.png") repeat scroll 0 0 rgba(0, 0, 0, 0.4);
@@ -817,7 +826,6 @@ input:focus, textarea:focus {
 /*-----------------------------FOOTER SECTION-----------------------------------*/
 .footer {
 	background: #000;
-	overflow: hidden;
 	margin-bottom: -100px; /*for fixing ie bug */
 }
 .footer p {
@@ -881,11 +889,25 @@ input:focus, textarea:focus {
 	background-attachment: scroll !important;
 	background-size: auto !important;
 }
+.navigation {
+	transition: ease .3s;
+	-webkit-transition: ease .3s;
+	-moz-transition: ease .3s;
+	-o-transition: ease .3s;
+	-ms-transition: ease .3s;
+}
 }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
 .bg-dark {
 	background-attachment: scroll !important;
 	background-size: auto !important;
+}
+.navigation {
+	transition: ease .3s;
+	-webkit-transition: ease .3s;
+	-moz-transition: ease .3s;
+	-o-transition: ease .3s;
+	-ms-transition: ease .3s;
 }
 }
 @media (min-width:768px) and (max-width:979px) {
@@ -941,6 +963,13 @@ input:focus, textarea:focus {
 }
 }
 @media (max-width: 767px) {
+.navigation {
+	transition: ease .3s;
+	-webkit-transition: ease .3s;
+	-moz-transition: ease .3s;
+	-o-transition: ease .3s;
+	-ms-transition: ease .3s;
+}
 .slider-content {
 	margin: auto;
 	max-width: 500px;
